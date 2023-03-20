@@ -22,6 +22,7 @@ export class Stack {
     }
 
     pop (): any {
+        this._empty = true
         this._size--
         return this.peek()
     }
