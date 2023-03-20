@@ -1,5 +1,4 @@
 export class Stack {
-    private element: any
     private elements: any[] = []
 
     isEmpty (): boolean {
@@ -11,12 +10,11 @@ export class Stack {
     }
 
     push (element: any) {
-        this.element = element
         this.elements.push(element)
     }
 
     peek (): any {
-        return this.element
+        return this.elements[this.elements.length-1]
     }
 
     pop (): any {
