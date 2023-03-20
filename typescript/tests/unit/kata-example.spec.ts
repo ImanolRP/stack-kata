@@ -17,13 +17,13 @@ describe('Stack', () => {
             expect(stack.isEmpty()).toBe(false)
         })
 
-        it('should return true when poped all pushed elements', () => {
+        it('should return true when popped all pushed elements', () => {
             stack.push('foo')
             stack.pop()
             expect(stack.isEmpty()).toBe(true)
         })
 
-        it('should return false when pushed more times than poped', () => {
+        it('should return false when pushed more times than popped', () => {
             stack.push('foo')
             stack.push('faa')
             stack.pop()
@@ -48,7 +48,7 @@ describe('Stack', () => {
             expect(stack.size()).toBe(3)
         })
 
-        it('should return two when pushed three times and poped one', () => {
+        it('should return two when pushed three times and popped one', () => {
             stack.push('foo')
             stack.push('faa')
             stack.push('fuu')
@@ -67,6 +67,13 @@ describe('Stack', () => {
     describe('pop', () => {
         it('should return foo after it has been pushed', () => {
             stack.push('foo')
+            expect(stack.pop()).toBe('foo')
+        })
+
+        it('should return first pushed element last time it is called if it is called same many times as push', () => {
+            stack.push('foo')
+            stack.push('faa')
+            stack.pop()
             expect(stack.pop()).toBe('foo')
         })
     })
