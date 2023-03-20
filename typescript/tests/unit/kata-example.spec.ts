@@ -35,4 +35,11 @@ describe('Stack', () => {
             expect(stack.size()).toBe(3)
         });
     })
+
+    describe('peek', () => {
+        it('should return foo after it has been pushed', () => {
+            stack.push('foo')
+            expect(stack.peek()).toBe('foo')
+        });
+    })
 });
