@@ -83,5 +83,9 @@ describe('Stack', () => {
             stack.pop()
             expect(stack.pop()).toBe('foo')
         })
+
+        it('should return an underflow error when popped while is empty', () => {
+            expect(() => stack.pop()).toThrowError('Stack Underflow')
+        })
     })
 })
