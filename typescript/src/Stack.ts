@@ -1,5 +1,6 @@
 export class Stack {
     private _size : number = 0
+    private element : any;
 
     isEmpty (): boolean {
         return !this._size
@@ -9,7 +10,12 @@ export class Stack {
         return this._size
     }
 
-    push (foo: any) {
+    push (element: any) {
         this._size++
+        this.element = element
+    }
+
+    peek(){
+        return this.element
     }
 }
