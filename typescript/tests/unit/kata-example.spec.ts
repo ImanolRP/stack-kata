@@ -22,6 +22,13 @@ describe('Stack', () => {
             stack.pop()
             expect(stack.isEmpty()).toBe(true)
         })
+
+        it('should return false when pushed more times than poped', () => {
+            stack.push('foo')
+            stack.push('faa')
+            stack.pop()
+            expect(stack.isEmpty()).toBe(false)
+        })
     })
 
     describe('size', () => {
