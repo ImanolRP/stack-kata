@@ -69,6 +69,10 @@ describe('Stack', () => {
             stack.pop()
             expect(stack.peek()).toBe('foo')
         })
+
+        it('should return an underflow error while is empty', () => {
+            expect(() => stack.peek()).toThrowError('Stack Underflow')
+        })
     })
 
     describe('pop', () => {
