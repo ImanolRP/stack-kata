@@ -8,16 +8,16 @@ describe('Stack', () => {
     })
 
     describe('isEmpty', () => {
-        it('should be empty when initialized', () => {
+        it('should return true when initialized', () => {
             expect(stack.isEmpty()).toBe(true)
         })
     
-        it('should not be empty when pushed one time', () => {
+        it('should return false when pushed one time', () => {
             stack.push('foo')
             expect(stack.isEmpty()).toBe(false)
         })
 
-        it('should return true when pushed one time and poped one time', () => {
+        it('should return true when poped all pushed elements', () => {
             stack.push('foo')
             stack.pop()
             expect(stack.isEmpty()).toBe(true)
