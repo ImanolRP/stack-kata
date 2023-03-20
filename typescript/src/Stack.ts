@@ -14,6 +14,10 @@ export class Stack {
     }
 
     peek (): any {
+        if(this.isEmpty()) {
+            throw Error('Stack Underflow')
+        }
+
         return this.elements[this.elements.length-1]
     }
 
