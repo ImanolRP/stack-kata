@@ -5,16 +5,22 @@ describe('Stack', () => {
 
     beforeEach(() => {
         stack = new Stack()
-    });
+    })
 
     describe('isEmpty', () => {
         it('should be empty when initialized', () => {
             expect(stack.isEmpty()).toBe(true)
         })
     
-        it('should not be empty when pushed on time', () => {
+        it('should not be empty when pushed one time', () => {
             stack.push('foo')
             expect(stack.isEmpty()).toBe(false)
+        })
+
+        it('should return true when pushed one time and poped one time', () => {
+            stack.push('foo')
+            stack.pop()
+            expect(stack.isEmpty()).toBe(true)
         })
     })
 
@@ -39,7 +45,7 @@ describe('Stack', () => {
             stack.push('foo')
             stack.push('faa')
             stack.push('fuu')
-            stack.pop();
+            stack.pop()
             expect(stack.size()).toBe(2)
         })
     })
@@ -57,4 +63,4 @@ describe('Stack', () => {
             expect(stack.pop()).toBe('foo')
         })
     })
-});
+})
