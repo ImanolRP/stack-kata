@@ -62,6 +62,13 @@ describe('Stack', () => {
             stack.push('foo')
             expect(stack.peek()).toBe('foo')
         })
+
+        it('should return first pushed element if pop is called one less time than push', () => {
+            stack.push('foo')
+            stack.push('faa')
+            stack.pop()
+            expect(stack.peek()).toBe('foo')
+        })
     })
 
     describe('pop', () => {
