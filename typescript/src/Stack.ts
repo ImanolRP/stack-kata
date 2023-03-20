@@ -18,6 +18,10 @@ export class Stack {
     }
 
     pop (): any {
+        if(this.isEmpty()) {
+            throw Error('Stack Underflow')
+        }
+
         return this.elements.pop()
     }
 }
