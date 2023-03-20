@@ -6,7 +6,7 @@ export class Stack {
         return !this._size
     }
 
-    size (): number{
+    size (): number {
         return this._size
     }
 
@@ -20,6 +20,7 @@ export class Stack {
     }
 
     pop (): any {
+        this._size--
         return this.peek()
     }
 }
