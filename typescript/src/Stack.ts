@@ -1,9 +1,16 @@
 export class Stack {
     private elements: any[] = []
+    private capacity: number
 
     constructor (
-        private capacity: number = Infinity
-    ){}
+        capacity: number = Infinity
+    ) {
+        if(capacity == -1) {
+            throw Error('Invalid Capacity')
+        }
+
+        this.capacity = capacity
+    }
 
     isEmpty (): boolean {
         return !this.elements.length
