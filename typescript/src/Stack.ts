@@ -1,5 +1,5 @@
-export class Stack {
-    private elements: any[] = []
+export class Stack <E = any> {
+    private elements: E[] = []
     private capacity: number
 
     constructor (
@@ -24,7 +24,7 @@ export class Stack {
         return this.elements.length
     }
 
-    push (element: any) {
+    push (element: E) {
         if(this.size() >= this.capacity) {
             throw Error('Stack Overflow')
         }
@@ -32,7 +32,7 @@ export class Stack {
         this.elements.push(element)
     }
 
-    peek (): any {
+    peek (): E {
         if(this.isEmpty()) {
             throw Error('Stack Underflow')
         }
@@ -40,11 +40,13 @@ export class Stack {
         return this.elements[this.elements.length-1]
     }
 
-    pop (): any {
-        if(this.isEmpty()) {
+    pop (): E {
+        const element = this.elements.pop()
+
+        if(element === undefined) {
             throw Error('Stack Underflow')
         }
 
-        return this.elements.pop()
+        return element
     }
 }

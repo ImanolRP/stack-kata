@@ -111,16 +111,16 @@ describe('Stack', () => {
         })
 
         it('should throw an overflow error if max size of 1 is reached', () => {
-            const limitedStack = new Stack(1)
+            const limitedStack = new Stack<string>(1)
             limitedStack.push('foo')
             expect(() => limitedStack.push('faa')).toThrowError('Stack Overflow')
         })
 
         it('should throw an overflow error if max size of 2 is reached', () => {
-            const limitedStack = new Stack(2)
-            limitedStack.push('foo')
-            limitedStack.push('faa')
-            expect(() => limitedStack.push('fuu')).toThrowError('Stack Overflow')
+            const limitedStack = new Stack<number>(2)
+            limitedStack.push(1)
+            limitedStack.push(2)
+            expect(() => limitedStack.push(3)).toThrowError('Stack Overflow')
         })
     })
 })
