@@ -94,10 +94,22 @@ describe('Stack', () => {
     })
 
     describe('push', () => {
-        it('should return an overflow error if max size reach', () => {
-            const limitedStack = new Stack(1);
+        it('should return an overflow error if max size of 0 is reached', () => {
+            const limitedStack = new Stack(0)
+            expect(() => limitedStack.push('foo')).toThrowError('Stack Overflow')
+        })
+
+        it('should return an overflow error if max size of 1 is reached', () => {
+            const limitedStack = new Stack(1)
             limitedStack.push('foo')
             expect(() => limitedStack.push('faa')).toThrowError('Stack Overflow')
+        })
+
+        it('should return an overflow error if max size of 2 is reached', () => {
+            const limitedStack = new Stack(2)
+            limitedStack.push('foo')
+            limitedStack.push('faa')
+            expect(() => limitedStack.push('fuu')).toThrowError('Stack Overflow')
         })
     })
 })

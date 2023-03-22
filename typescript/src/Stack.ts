@@ -14,9 +14,10 @@ export class Stack {
     }
 
     push (element: any) {
-        if(this.maxSize != Infinity && this.size() == 1){
+        if(this.size() >= this.maxSize) {
             throw Error('Stack Overflow')
         }
+
         this.elements.push(element)
     }
 
