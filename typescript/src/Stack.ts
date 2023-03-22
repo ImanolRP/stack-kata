@@ -11,7 +11,7 @@ export class Stack {
     }
 
     private validateCapacity(capacity: number) {
-        if(capacity == -1) {
+        if(capacity < 0) {
             throw Error('Invalid Capacity')
         }
     }
