@@ -7,6 +7,12 @@ describe('Stack', () => {
         stack = new Stack()
     })
 
+    describe('new/constructor', () => {
+        it('should throw an invalid capacity error on negative capacity of -1 given', () => {
+            expect(() => new Stack(-1)).toThrowError('Invalid Capacity')
+        })
+    })
+
     describe('isEmpty', () => {
         it('should return true when initialized', () => {
             expect(stack.isEmpty()).toBe(true)
@@ -70,7 +76,7 @@ describe('Stack', () => {
             expect(stack.peek()).toBe('foo')
         })
 
-        it('should return an underflow error while is empty', () => {
+        it('should throw an underflow error while is empty', () => {
             expect(() => stack.peek()).toThrowError('Stack Underflow')
         })
     })
@@ -88,24 +94,24 @@ describe('Stack', () => {
             expect(stack.pop()).toBe('foo')
         })
 
-        it('should return an underflow error while is empty', () => {
+        it('should throw an underflow error while is empty', () => {
             expect(() => stack.pop()).toThrowError('Stack Underflow')
         })
     })
 
     describe('push', () => {
-        it('should return an overflow error if max size of 0 is reached', () => {
+        it('should throw an overflow error if max size of 0 is reached', () => {
             const limitedStack = new Stack(0)
             expect(() => limitedStack.push('foo')).toThrowError('Stack Overflow')
         })
 
-        it('should return an overflow error if max size of 1 is reached', () => {
+        it('should throw an overflow error if max size of 1 is reached', () => {
             const limitedStack = new Stack(1)
             limitedStack.push('foo')
             expect(() => limitedStack.push('faa')).toThrowError('Stack Overflow')
         })
 
-        it('should return an overflow error if max size of 2 is reached', () => {
+        it('should throw an overflow error if max size of 2 is reached', () => {
             const limitedStack = new Stack(2)
             limitedStack.push('foo')
             limitedStack.push('faa')
