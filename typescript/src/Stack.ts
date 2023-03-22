@@ -5,11 +5,15 @@ export class Stack {
     constructor (
         capacity: number = Infinity
     ) {
+        this.validateCapacity(capacity)
+
+        this.capacity = capacity
+    }
+
+    private validateCapacity(capacity: number) {
         if(capacity == -1) {
             throw Error('Invalid Capacity')
         }
-
-        this.capacity = capacity
     }
 
     isEmpty (): boolean {
