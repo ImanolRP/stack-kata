@@ -11,6 +11,10 @@ describe('Stack', () => {
         it('should throw an invalid capacity error on negative capacity of -1 given', () => {
             expect(() => new Stack(-1)).toThrowError('Invalid Capacity')
         })
+
+        it('should throw an invalid capacity error on negative capacity of -2 given', () => {
+            expect(() => new Stack(-2)).toThrowError('Invalid Capacity')
+        })
     })
 
     describe('isEmpty', () => {
