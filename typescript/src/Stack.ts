@@ -2,7 +2,7 @@ export class Stack {
     private elements: any[] = []
 
     constructor (
-        private maxSize: number = Infinity
+        private capacity: number = Infinity
     ){}
 
     isEmpty (): boolean {
@@ -14,7 +14,7 @@ export class Stack {
     }
 
     push (element: any) {
-        if(this.size() >= this.maxSize) {
+        if(this.size() >= this.capacity) {
             throw Error('Stack Overflow')
         }
 
