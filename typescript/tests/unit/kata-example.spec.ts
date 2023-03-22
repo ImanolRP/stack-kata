@@ -97,7 +97,7 @@ describe('Stack', () => {
         it('should return an overflow error if max size reach', () => {
             const limitedStack = new Stack(1);
             limitedStack.push('foo')
-            expect(() => stack.push('faa')).toThrowError('Stack Overflow')
+            expect(() => limitedStack.push('faa')).toThrowError('Stack Overflow')
         })
     })
 })
