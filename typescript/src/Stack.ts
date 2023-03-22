@@ -1,6 +1,10 @@
 export class Stack {
     private elements: any[] = []
 
+    constructor (
+        private maxSize: number = Infinity
+    ){}
+
     isEmpty (): boolean {
         return !this.elements.length
     }
